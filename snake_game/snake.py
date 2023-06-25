@@ -21,9 +21,13 @@ class Snake:
         # init direction
         self.direction = self.down
 
+    def increase_length(self):
+        self.length += 1
+        self.x.append(-1)
+        self.y.append(-1)
+
     # fill screen, draw block, refresh screen
     def draw(self):
-        self.parent_screen.fill((110,110,5))
         for i in range(self.length):
             self.parent_screen.blit(self.block,(self.x[i],self.y[i]))
         pygame.display.flip()
