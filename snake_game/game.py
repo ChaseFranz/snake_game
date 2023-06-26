@@ -7,6 +7,7 @@ from snake import *
 class Game:
     def __init__(self):
         pygame.init()
+        self.clock = pygame.time.Clock()
         self.size = 40
         self.background_color = (110,110,5)
         self.font_color = (255,255,255)
@@ -80,7 +81,7 @@ class Game:
                 self.show_game_over()
                 self.reset()
 
-            time.sleep(0.3)
+            self.clock.tick(6)
     
     def show_game_over(self):
         self.surface.fill(self.background_color)
