@@ -30,7 +30,6 @@ class Snake:
     def draw(self):
         for i in range(self.length):
             self.parent_screen.blit(self.block,(self.x[i],self.y[i]))
-        pygame.display.flip()
 
     def move_left(self):
         self.direction = self.left
