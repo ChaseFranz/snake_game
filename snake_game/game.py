@@ -33,7 +33,7 @@ class Game:
         self.apple.draw()
         self.snake.walk()
         self.display_score()
-        pygame.display.flip()
+        pygame.display.update()
 
         # Check if collision with apple
         if self.is_collision(self.snake.x[0], self.snake.y[0],self.apple.x,self.apple.y):
@@ -52,6 +52,8 @@ class Game:
     def run(self):
         running = True
         pause = False
+        FPS = 60
+        
         while running:
             # Handle user input
             for event in pygame.event.get():
